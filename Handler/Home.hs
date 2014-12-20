@@ -3,6 +3,7 @@ module Handler.Home where
 import Import
 import Yesod.Form.Bootstrap3 (BootstrapFormLayout (..), renderBootstrap3,
                               withSmallInput)
+import Yesod.PureScript (getPureScriptRoute)
 
 -- This is a handler function for the GET request method on the HomeR
 -- resource pattern. All of your resource patterns are defined in
@@ -19,6 +20,7 @@ getHomeR = do
     defaultLayout $ do
         aDomId <- newIdent
         setTitle "Welcome To Yesod!"
+        addScript $ PureScriptR $ getPureScriptRoute ["Hello"]
         $(widgetFile "homepage")
 
 postHomeR :: Handler Html
@@ -32,6 +34,7 @@ postHomeR = do
     defaultLayout $ do
         aDomId <- newIdent
         setTitle "Welcome To Yesod!"
+        addScript $ PureScriptR $ getPureScriptRoute ["Hello"]
         $(widgetFile "homepage")
 
 sampleForm :: Form (FileInfo, Text)

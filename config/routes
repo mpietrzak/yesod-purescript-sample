@@ -1,5 +1,6 @@
 /static StaticR Static appStatic
 /auth   AuthR   Auth   getAuth
+/purs   PureScriptR PureScriptSite  appPureScript
 
 /favicon.ico FaviconR GET
 /robots.txt RobotsR GET
